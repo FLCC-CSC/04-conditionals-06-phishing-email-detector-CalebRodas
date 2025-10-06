@@ -1,8 +1,9 @@
 # FILE NAME - phishing_email_detector.py
 
-# NAME: 
-# DATE: 
-# BRIEF DESCRIPTION:  
+# NAME: Caleb Rodas
+# DATE: 10/05/2025
+# BRIEF DESCRIPTION:  This program analyzes an email subject line for common phishing indicators
+# and classifies the risk level based on keywords.
 
 
 
@@ -18,7 +19,27 @@
 
 
 
+# Prompt user for input
+subject_line = input("Enter the email subject line: ")
 
+# Convert the subject line to lowercase for case-insensitive comparison
+subject_lower = subject_line.lower()
+
+# Analyze the subject line for phishing indicators
+print("\nSECURITY ASSESSMENT:")
+
+if "urgent" in subject_lower or "immediate action required" in subject_lower:
+    print("HIGH RISK: Possible phishing attempt.")
+elif "win" in subject_lower or "free" in subject_lower:
+    print("MEDIUM RISK: Suspicious offer detected.")
+elif "password reset" in subject_lower:
+    print("LOW RISK: Verify legitimacy with sender.")
+else:
+    print("No phishing indicators detected.")
+
+# Print analyzed subject line
+print("------------------------")
+print(f'Analyzed subject: "{subject_line}"')
 
 
 
